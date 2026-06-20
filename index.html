@@ -9,19 +9,22 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap');
-    
+   
     body { font-family: 'Inter', sans-serif; }
     .heading-font { font-family: 'Playfair Display', sans-serif; }
+    
     .hero-bg {
       background: linear-gradient(135deg, #0f172a 0%, #1e2937 100%);
     }
+    
     .card-hover {
       transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     }
     .card-hover:hover {
       transform: translateY(-12px);
-      box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.15);
+      box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
     }
+    
     .stat-number {
       font-size: 3.5rem;
       font-weight: 800;
@@ -29,92 +32,208 @@
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
+
+    /* Motion & Animations */
+    .fade-in {
+      opacity: 0;
+      animation: fadeInUp 0.8s forwards;
+    }
+    
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    .hero-text {
+      animation: heroTextPop 1s ease forwards;
+    }
+    
+    @keyframes heroTextPop {
+      0% { opacity: 0; transform: scale(0.9); }
+      100% { opacity: 1; transform: scale(1); }
+    }
+    
+    .floating {
+      animation: float 3s ease-in-out infinite;
+    }
+    
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-20px); }
+    }
+    
+    .nav-link {
+      position: relative;
+    }
+    .nav-link:after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: -2px;
+      left: 0;
+      background-color: #22c55e;
+      transition: all 0.3s ease;
+    }
+    .nav-link:hover:after {
+      width: 100%;
+    }
+
+    /* Mobile menu */
+    #mobile-menu {
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
   </style>
 </head>
-<body class="bg-gray-50 text-gray-900">
-
+<body class="bg-gray-50 text-gray-900 overflow-x-hidden">
   <!-- NAVBAR -->
-  <nav class="bg-white border-b sticky top-0 z-50">
+  <nav class="bg-white border-b sticky top-0 z-50 shadow-sm">
     <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
       <div class="flex items-center gap-3">
         <img src="https://scalecoachpro.netlify.app/busyfitt.jpeg" alt="ScaleCoachPro Logo" class="h-11 w-auto">
-        <span class="text-2xl font-bold tracking-tight heading-font">ScaleCoachPro</span>
+        <span class="text-2xl font-bold tracking-tight heading-font text-gray-900">ScaleCoachPro</span>
       </div>
+      
+      <!-- Desktop Menu -->
       <div class="hidden md:flex items-center gap-8 text-sm font-medium">
+        <a href="#" class="nav-link hover:text-green-600 transition">How It Works</a>
+        <a href="#" class="nav-link hover:text-green-600 transition">Success Stories</a>
+        <a href="#" class="nav-link hover:text-green-600 transition">For Professionals</a>
+        <a href="#" class="nav-link hover:text-green-600 transition">Blog</a>
+      </div>
+      
+      <div class="flex items-center gap-4">
+        <a href="https://wa.me/918979401469?text=Hi%20Coach%2C%0A%0AI%20want%20to%20book%20my%20free%20consultation.%0A%0AName%3A%0AAge%3A%0AGender%3A%0ACurrent%20Weight%3A%0AGoal%20(Weight%20Loss%20%2F%20Muscle%20Gain)%3A"
+           class="hidden sm:block bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-2xl font-semibold text-sm transition shadow-lg shadow-green-500/30">
+          Book Free Call
+        </a>
+        
+        <!-- Hamburger -->
+        <button id="menu-btn" class="md:hidden text-3xl text-gray-700">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+    
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+      <div class="px-6 py-8 flex flex-col gap-6 text-lg font-medium">
         <a href="#" class="hover:text-green-600 transition">How It Works</a>
         <a href="#" class="hover:text-green-600 transition">Success Stories</a>
         <a href="#" class="hover:text-green-600 transition">For Professionals</a>
         <a href="#" class="hover:text-green-600 transition">Blog</a>
+        <a href="https://wa.me/918979401469?text=Hi%20Coach%2C%0A%0AI%20want%20to%20book%20my%20free%20consultation.%0A%0AName%3A%0AAge%3A%0AGender%3A%0ACurrent%20Weight%3A%0AGoal%20(Weight%20Loss%20%2F%20Muscle%20Gain)%3A"
+           class="bg-green-600 text-white py-4 text-center rounded-2xl font-semibold">
+          Book Free Consultation
+        </a>
       </div>
-      <a href="https://wa.me/918979401469?text=Hi%20Coach%2C%0A%0AI%20want%20to%20book%20my%20free%20consultation.%0A%0AName%3A%0AAge%3A%0AGender%3A%0ACurrent%20Weight%3A%0AGoal%20(Weight%20Loss%20%2F%20Muscle%20Gain)%3A"
-         class="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-xl font-semibold transition">
-        Book Free Call
-      </a>
     </div>
   </nav>
 
-  <!-- HERO SECTION -->
-  <section class="hero-bg text-white py-20 md:py-28 relative overflow-hidden">
-    <div class="absolute inset-0 bg-[radial-gradient(at_top_right,#22c55e10_0%,transparent_50%)]"></div>
+  <!-- HERO SECTION - More Attractive -->
+  <section class="hero-bg text-white py-24 md:py-32 relative overflow-hidden">
+    <!-- Background Effects -->
+    <div class="absolute inset-0 bg-[radial-gradient(at_top_right,#22c55e20_0%,transparent_60%)]"></div>
+    <div class="absolute inset-0 bg-[radial-gradient(at_bottom_left,#86efac15_0%,transparent_70%)]"></div>
+    
     <div class="max-w-7xl mx-auto px-6 relative">
       <div class="grid md:grid-cols-2 gap-12 items-center">
-        
+       
         <!-- Left Content -->
-        <div>
-          <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 px-5 py-2 rounded-3xl text-sm font-semibold mb-6">
-            <span class="text-green-400">●</span>
+        <div class="space-y-8">
+          <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-xl border border-white/30 px-6 py-3 rounded-3xl text-sm font-semibold tracking-wide">
+            <span class="relative flex h-3 w-3">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-3 w-3 bg-green-400"></span>
+            </span>
             BUSY PROFESSIONALS FITNESS COACH
           </div>
-          
-          <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight heading-font mb-6">
-            Fitness Coach for <span class="text-green-400">Busy Professionals</span>
+         
+          <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.1] heading-font hero-text">
+            Fitness That Fits<br>Your <span class="text-green-400">Busy Life</span>
           </h1>
-          
-          <p class="text-xl md:text-2xl text-gray-300 mb-10">
-            As your dedicated <strong>busy professionals fitness coach</strong>, I help working professionals lose weight, build strength, and boost energy with sustainable plans that fit your demanding schedule.
+         
+          <p class="text-xl md:text-2xl text-gray-200 max-w-lg leading-relaxed">
+            Personalized online coaching for busy professionals. <strong>Sustainable fat loss, strength &amp; energy</strong> — without long gym hours or strict diets.
           </p>
-          
+         
           <div class="flex flex-wrap gap-4">
             <a href="https://wa.me/918979401469?text=Hi%20Coach%2C%0A%0AI%20want%20to%20book%20my%20free%20consultation.%0A%0AName%3A%0AAge%3A%0AGender%3A%0ACurrent%20Weight%3A%0AGoal%20(Weight%20Loss%20%2F%20Muscle%20Gain)%3A"
-               class="bg-green-500 hover:bg-green-600 text-white px-8 py-4 rounded-2xl font-semibold text-lg flex items-center gap-3 transition">
-              <i class="fa-solid fa-arrow-right"></i>
-              Start Your Free Consultation
+               class="group bg-green-500 hover:bg-green-600 text-white px-10 py-5 rounded-3xl font-semibold text-lg flex items-center gap-4 transition-all duration-300 shadow-xl shadow-green-500/40 hover:scale-105">
+              <span>Start Free Consultation</span>
+              <i class="fa-solid fa-arrow-right group-active:rotate-45 transition"></i>
             </a>
-            <a href="#" class="border border-white/50 hover:bg-white/10 px-8 py-4 rounded-2xl font-semibold text-lg transition">
-              Watch 2-min Video
+            
+            <a href="#" onclick="alert('Video coming soon!')" 
+               class="border border-white/60 hover:bg-white/10 px-8 py-5 rounded-3xl font-semibold text-lg flex items-center gap-3 transition-all">
+              <i class="fa-solid fa-play"></i>
+              <span>Watch 2-min Video</span>
             </a>
           </div>
-
-          <div class="mt-16 grid grid-cols-3 gap-8">
-            <div>
-              <div class="stat-number">1500+</div>
-              <p class="text-gray-400 mt-2">Professionals Coached</p>
+          
+          <!-- Trust signals -->
+          <div class="flex items-center gap-8 pt-6">
+            <div class="flex items-center gap-2">
+              <div class="flex -space-x-4">
+                <div class="w-8 h-8 rounded-2xl bg-green-400 flex items-center justify-center text-xs font-bold ring-2 ring-white">✓</div>
+              </div>
+              <div>
+                <div class="text-sm font-semibold">4.98/5</div>
+                <div class="text-xs text-gray-400">From 1500+ clients</div>
+              </div>
             </div>
-            <div>
-              <div class="stat-number">18,400</div>
-              <p class="text-gray-400 mt-2">Pounds Lost</p>
+          </div>
+          
+          <!-- Stats -->
+          <div class="grid grid-cols-3 gap-6 pt-8 border-t border-white/20">
+            <div class="text-center md:text-left">
+              <div class="stat-number text-4xl md:text-5xl">1500+</div>
+              <p class="text-green-100 text-sm mt-1">Professionals Transformed</p>
             </div>
-            <div>
-              <div class="stat-number">4.98</div>
-              <p class="text-gray-400 mt-2">Average Rating</p>
+            <div class="text-center md:text-left">
+              <div class="stat-number text-4xl md:text-5xl">18.4k</div>
+              <p class="text-green-100 text-sm mt-1">Pounds Lost</p>
+            </div>
+            <div class="text-center md:text-left">
+              <div class="stat-number text-4xl md:text-5xl">4.98</div>
+              <p class="text-green-100 text-sm mt-1">Avg. Rating</p>
             </div>
           </div>
         </div>
-
+        
         <!-- Right Side Image -->
-        <div class="hidden md:block">
+        <div class="relative hidden md:flex justify-center">
+          <div class="absolute -inset-10 bg-gradient-to-br from-green-400/20 to-transparent rounded-[4rem] -rotate-6"></div>
           <img src="https://scalecoachpro.netlify.app/idd.jpg"
                alt="Busy Professionals Fitness Coach"
-               class="rounded-3xl shadow-2xl w-full max-w-lg mx-auto"
+               class="floating rounded-3xl shadow-2xl w-full max-w-lg relative z-10 border-8 border-white/30"
                onerror="this.src='https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800'">
+          
+          <!-- Floating badge -->
+          <div class="absolute -top-6 -right-6 bg-white text-gray-900 px-5 py-3 rounded-2xl shadow-xl flex items-center gap-3 text-sm font-semibold">
+            <div class="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
+            Next slot in 3 days
+          </div>
         </div>
       </div>
+    </div>
+    
+    <!-- Scroll indicator -->
+    <div class="hidden md:flex absolute bottom-10 left-1/2 flex-col items-center gap-2 text-white/70">
+      <div class="text-xs tracking-widest">SCROLL</div>
+      <div class="w-px h-12 bg-gradient-to-b from-transparent via-white/50 to-transparent"></div>
     </div>
   </section>
 
   <!-- TRUST BAR -->
-  <div class="bg-white py-6 border-b">
-    <div class="max-w-7xl mx-auto px-6 flex flex-wrap justify-center items-center gap-10 opacity-75">
+  <div class="bg-white py-8 border-b">
+    <div class="max-w-7xl mx-auto px-6 flex flex-wrap justify-center items-center gap-x-12 gap-y-6 opacity-75">
       <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Amazon_logo.svg/2560px-Amazon_logo.svg.png" alt="Amazon" class="h-6">
       <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/BBC.svg/2560px-BBC.svg.png" alt="BBC" class="h-7">
       <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/2560px-Google_2015_logo.svg.png" alt="Google" class="h-8">
@@ -126,13 +245,11 @@
   <!-- INTRO CONTENT -->
   <section class="py-20 bg-white">
     <div class="max-w-7xl mx-auto px-6">
-      <div class="max-w-3xl mx-auto text-center">
-        <h2 class="text-4xl font-bold heading-font mb-8">Fitness Coach for Working Professionals</h2>
-        <p class="text-lg text-gray-600 leading-relaxed mb-6">
-          Being a busy professional doesn't mean you have to compromise your health. As an experienced <strong>busy professionals fitness coach</strong>, I understand the unique challenges you face — long meetings, tight deadlines, frequent travel, and family responsibilities. 
-        </p>
+      <div class="max-w-3xl mx-auto text-center fade-in">
+        <h2 class="text-4xl md:text-5xl font-bold heading-font mb-8">Fitness Coach Built for Busy Professionals</h2>
         <p class="text-lg text-gray-600 leading-relaxed">
-          Traditional gym programs and fad diets fail because they don't respect your schedule. My personalized fitness coaching for working professionals is designed specifically for high-achievers like you. You get custom workout plans, nutrition guidance, and accountability that deliver real results without burning you out.
+          You don’t need more time. You need smarter fitness. 
+          I help high-performing professionals lose weight, build strength and reclaim energy with plans that actually fit around meetings, travel and family life.
         </p>
       </div>
     </div>
@@ -141,31 +258,31 @@
   <!-- CHALLENGES -->
   <section class="py-20 bg-gray-50">
     <div class="max-w-7xl mx-auto px-6">
-      <div class="text-center mb-16">
-        <h2 class="text-4xl font-bold heading-font">Common Challenges Your Busy Professionals Fitness Coach Helps Overcome</h2>
-        <p class="text-xl text-gray-600 mt-4">Real problems faced by working professionals and how we solve them</p>
+      <div class="text-center mb-16 fade-in">
+        <h2 class="text-4xl md:text-5xl font-bold heading-font">Challenges I Help You Overcome</h2>
+        <p class="text-xl text-gray-600 mt-4">Real problems. Proven solutions.</p>
       </div>
-      
+     
       <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-        <div class="card-hover bg-white p-8 rounded-3xl shadow-sm">
-          <div class="w-14 h-14 bg-orange-100 rounded-2xl flex items-center justify-center text-3xl mb-6">⏰</div>
-          <h3 class="text-2xl font-semibold mb-3">No Time</h3>
-          <p class="text-gray-600">Long work hours and endless meetings leave no room for lengthy workouts. I create efficient 30-45 minute sessions that deliver maximum results.</p>
+        <div class="card-hover bg-white p-8 rounded-3xl shadow-sm fade-in" style="animation-delay: 100ms">
+          <div class="w-16 h-16 bg-orange-100 rounded-3xl flex items-center justify-center text-4xl mb-8">⏰</div>
+          <h3 class="text-2xl font-semibold mb-4">Zero Time</h3>
+          <p class="text-gray-600">30–45 minute efficient workouts that deliver results even on your busiest days.</p>
         </div>
-        <div class="card-hover bg-white p-8 rounded-3xl shadow-sm">
-          <div class="w-14 h-14 bg-red-100 rounded-2xl flex items-center justify-center text-3xl mb-6">⚡</div>
-          <h3 class="text-2xl font-semibold mb-3">Energy Crash</h3>
-          <p class="text-gray-600">Stress and poor nutrition drain your energy. My program restores natural energy levels so you perform better at work and feel great at home.</p>
+        <div class="card-hover bg-white p-8 rounded-3xl shadow-sm fade-in" style="animation-delay: 200ms">
+          <div class="w-16 h-16 bg-red-100 rounded-3xl flex items-center justify-center text-4xl mb-8">⚡</div>
+          <h3 class="text-2xl font-semibold mb-4">Constant Fatigue</h3>
+          <p class="text-gray-600">Restore natural energy through smart nutrition and recovery strategies.</p>
         </div>
-        <div class="card-hover bg-white p-8 rounded-3xl shadow-sm">
-          <div class="w-14 h-14 bg-blue-100 rounded-2xl flex items-center justify-center text-3xl mb-6">📈</div>
-          <h3 class="text-2xl font-semibold mb-3">Weight Plateaus</h3>
-          <p class="text-gray-600">Repeated weight gain after every diet attempt. I use science-backed strategies tailored for busy lifestyles to ensure steady, sustainable fat loss.</p>
+        <div class="card-hover bg-white p-8 rounded-3xl shadow-sm fade-in" style="animation-delay: 300ms">
+          <div class="w-16 h-16 bg-blue-100 rounded-3xl flex items-center justify-center text-4xl mb-8">📈</div>
+          <h3 class="text-2xl font-semibold mb-4">Weight Plateaus</h3>
+          <p class="text-gray-600">Science-backed methods designed for busy metabolisms.</p>
         </div>
-        <div class="card-hover bg-white p-8 rounded-3xl shadow-sm">
-          <div class="w-14 h-14 bg-purple-100 rounded-2xl flex items-center justify-center text-3xl mb-6">🎯</div>
-          <h3 class="text-2xl font-semibold mb-3">Lack of Accountability</h3>
-          <p class="text-gray-600">Starting strong but losing motivation. As your dedicated fitness coach for working professionals, I provide weekly check-ins and constant support.</p>
+        <div class="card-hover bg-white p-8 rounded-3xl shadow-sm fade-in" style="animation-delay: 400ms">
+          <div class="w-16 h-16 bg-purple-100 rounded-3xl flex items-center justify-center text-4xl mb-8">🎯</div>
+          <h3 class="text-2xl font-semibold mb-4">No Accountability</h3>
+          <p class="text-gray-600">Weekly check-ins, progress tracking &amp; direct support from your coach.</p>
         </div>
       </div>
     </div>
@@ -174,44 +291,43 @@
   <!-- BENEFITS -->
   <section class="py-20 bg-white">
     <div class="max-w-7xl mx-auto px-6">
-      <div class="text-center mb-16">
-        <h2 class="text-4xl font-bold heading-font">What You'll Get With Your Fitness Coach</h2>
-        <p class="text-xl text-gray-600 mt-4">Proven system designed exclusively for busy professionals</p>
+      <div class="text-center mb-16 fade-in">
+        <h2 class="text-4xl md:text-5xl font-bold heading-font">What You Get</h2>
+        <p class="text-xl text-gray-600 mt-4">Everything you need to succeed</p>
       </div>
-      
+     
       <div class="grid md:grid-cols-3 gap-8">
-        <div class="card-hover bg-gray-50 p-8 rounded-3xl">
-          <h3 class="text-2xl font-semibold mb-4 flex items-center gap-3">
-            <span class="text-green-500">01</span> Personalized Plans
-          </h3>
-          <p class="text-gray-600">Custom workout and nutrition plans based on your schedule, goals, current fitness level, and lifestyle. No cookie-cutter programs.</p>
+        <div class="card-hover bg-gradient-to-br from-gray-50 to-white p-10 rounded-3xl border border-gray-100 fade-in" style="animation-delay: 100ms">
+          <div class="text-green-500 text-5xl mb-6">01</div>
+          <h3 class="text-2xl font-semibold mb-4">Hyper-Personalized Plans</h3>
+          <p class="text-gray-600">Tailored to your exact schedule, goals, equipment access and lifestyle.</p>
         </div>
-        <div class="card-hover bg-gray-50 p-8 rounded-3xl">
-          <h3 class="text-2xl font-semibold mb-4 flex items-center gap-3">
-            <span class="text-green-500">02</span> Efficient Training
-          </h3>
-          <p class="text-gray-600">Short, high-intensity workouts you can do at home, hotel, or gym. Maximum results in minimum time — perfect for working professionals.</p>
+        <div class="card-hover bg-gradient-to-br from-gray-50 to-white p-10 rounded-3xl border border-gray-100 fade-in" style="animation-delay: 200ms">
+          <div class="text-green-500 text-5xl mb-6">02</div>
+          <h3 class="text-2xl font-semibold mb-4">Time-Efficient Training</h3>
+          <p class="text-gray-600">Home, hotel or gym — short, powerful sessions that actually work.</p>
         </div>
-        <div class="card-hover bg-gray-50 p-8 rounded-3xl">
-          <h3 class="text-2xl font-semibold mb-4 flex items-center gap-3">
-            <span class="text-green-500">03</span> Ongoing Support
-          </h3>
-          <p class="text-gray-600">Weekly check-ins, progress tracking, mindset coaching, and direct WhatsApp support from your busy professionals fitness coach.</p>
+        <div class="card-hover bg-gradient-to-br from-gray-50 to-white p-10 rounded-3xl border border-gray-100 fade-in" style="animation-delay: 300ms">
+          <div class="text-green-500 text-5xl mb-6">03</div>
+          <h3 class="text-2xl font-semibold mb-4">Continuous Support</h3>
+          <p class="text-gray-600">WhatsApp access, weekly reviews, mindset coaching &amp; adjustments.</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- CTA -->
-  <section class="bg-gradient-to-r from-green-600 to-emerald-600 py-20 text-white">
-    <div class="max-w-4xl mx-auto text-center px-6">
-      <h2 class="text-5xl font-bold heading-font mb-6">Ready to Transform with a Busy Professionals Fitness Coach?</h2>
-      <p class="text-xl mb-10">Join 1500+ working professionals who finally achieved sustainable fitness results without sacrificing their career or family time.</p>
+  <section class="bg-gradient-to-br from-green-600 via-emerald-600 to-teal-600 py-24 text-white relative overflow-hidden">
+    <div class="max-w-4xl mx-auto text-center px-6 relative z-10">
+      <h2 class="text-5xl md:text-6xl font-bold heading-font mb-8 leading-tight">Ready to Finally Get Fit?</h2>
+      <p class="text-2xl mb-12 max-w-2xl mx-auto">Join 1500+ busy professionals who transformed their body and energy while advancing their careers.</p>
+      
       <a href="https://wa.me/918979401469?text=Hi%20Coach%2C%0A%0AI%20want%20to%20book%20my%20free%20consultation.%0A%0AName%3A%0AAge%3A%0AGender%3A%0ACurrent%20Weight%3A%0AGoal%20(Weight%20Loss%20%2F%20Muscle%20Gain)%3A"
-         class="inline-block bg-white text-green-700 hover:bg-gray-100 px-12 py-5 rounded-2xl text-xl font-semibold transition">
-        Book Your Free Strategy Call
+         class="inline-block bg-white text-green-700 hover:bg-emerald-50 px-14 py-6 rounded-3xl text-2xl font-semibold transition-all hover:scale-105 shadow-2xl">
+        Book Your Free 15-min Strategy Call
       </a>
-      <p class="text-sm mt-6 opacity-90">Limited spots available • 15-minute call</p>
+      
+      <p class="text-sm mt-8 opacity-90">✅ No obligation • Limited slots available this month</p>
     </div>
   </section>
 
@@ -227,5 +343,38 @@
     </div>
   </footer>
 
+  <script>
+    // Tailwind script already loaded via CDN
+    function init() {
+      // Mobile menu toggle
+      const menuBtn = document.getElementById('menu-btn');
+      const mobileMenu = document.getElementById('mobile-menu');
+      
+      menuBtn.addEventListener('click', () => {
+        if (mobileMenu.classList.contains('hidden')) {
+          mobileMenu.classList.remove('hidden');
+          menuBtn.innerHTML = '<i class="fa-solid fa-xmark"></i>';
+        } else {
+          mobileMenu.classList.add('hidden');
+          menuBtn.innerHTML = '<i class="fa-solid fa-bars"></i>';
+        }
+      });
+      
+      // Add fade-in to more elements on scroll
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = 1;
+          }
+        });
+      }, { threshold: 0.1 });
+      
+      document.querySelectorAll('.fade-in').forEach(el => {
+        observer.observe(el);
+      });
+    }
+    
+    window.onload = init;
+  </script>
 </body>
 </html>
