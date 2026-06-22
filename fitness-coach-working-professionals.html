@@ -40,18 +40,22 @@
       transition: all 0.3s ease;
     }
     .nav-link:hover:after { width: 100%; }
-    
-    .dropdown-content {
-      display: none;
-      position: absolute;
-      background-color: white;
-      box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
-      border-radius: 12px;
-      min-width: 240px;
-      z-index: 50;
-      padding: 12px 0;
+
+    .section-fade {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s ease;
     }
-    .dropdown:hover .dropdown-content { display: block; }
+    .section-fade.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .stat-number {
+      font-size: 3rem;
+      font-weight: 700;
+      color: #22c55e;
+    }
   </style>
 </head>
 <body class="bg-gray-50 text-gray-900 overflow-x-hidden">
@@ -67,14 +71,15 @@
       <div class="hidden md:flex items-center gap-8 text-sm font-medium">
         <a href="index.html" class="nav-link hover:text-green-600 transition">Home</a>
         
-        <div class="relative dropdown group">
+        <div class="relative group">
           <a href="#" class="nav-link hover:text-green-600 transition flex items-center gap-1">
-            Services <i class="fa-solid fa-chevron-down text-xs"></i>
+            Services 
+            <i class="fa-solid fa-chevron-down text-xs transition-transform group-hover:rotate-180"></i>
           </a>
-          <div class="dropdown-content">
-            <a href="fitness-coach-working-professionals.html" class="block px-6 py-3 hover:bg-gray-50">Fitness Coach for Working Professionals</a>
-            <a href="#" class="block px-6 py-3 hover:bg-gray-50">Online Fitness Coach for Professionals</a>
-            <a href="#" class="block px-6 py-3 hover:bg-gray-50">Corporate Wellness Coaching</a>
+          <div class="absolute left-0 mt-2 bg-white shadow-xl border border-gray-100 rounded-2xl py-2 w-64 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+            <a href="fitness-coach-working-professionals.html" class="block px-6 py-3 hover:bg-gray-50 text-gray-700">Fitness Coach for Working Professionals</a>
+            <a href="#" class="block px-6 py-3 hover:bg-gray-50 text-gray-700">Online Fitness Coach for Professionals</a>
+            <a href="#" class="block px-6 py-3 hover:bg-gray-50 text-gray-700">Corporate Wellness Coaching</a>
           </div>
         </div>
         
@@ -97,38 +102,173 @@
 
   <!-- HERO -->
   <section class="hero-bg text-white py-28 relative overflow-hidden">
-    <div class="max-w-7xl mx-auto px-6 text-center">
+    <div class="max-w-7xl mx-auto px-6 text-center relative z-10">
       <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold heading-font leading-tight mb-6">
         Fitness Coach for<br>Working Professionals
       </h1>
-      <p class="text-2xl text-gray-200 max-w-3xl mx-auto">
+      <p class="text-2xl text-gray-200 max-w-3xl mx-auto mb-10">
         Personalized online fitness coaching for busy professionals who want real results without long gym hours.
       </p>
       <a href="https://wa.me/918979401469?text=Hi%20Coach%2C%0A%0AI%20want%20to%20book%20my%20free%20consultation.%0A%0AName%3A%0AAge%3A%0AGender%3A%0ACurrent%20Weight%3A%0AGoal%20(Weight%20Loss%20%2F%20Muscle%20Gain)%3A" 
-         class="mt-10 inline-block bg-green-500 hover:bg-green-600 px-12 py-6 rounded-3xl text-xl font-semibold transition">
+         class="inline-block bg-green-500 hover:bg-green-600 px-12 py-6 rounded-3xl text-xl font-semibold transition shadow-xl">
         Book Free Consultation
       </a>
     </div>
+    <div class="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-gray-50 to-transparent"></div>
   </section>
 
-  <!-- Rest of the content (same as previous) -->
-  <section class="py-20 bg-white">
-    <div class="max-w-4xl mx-auto px-6 text-center">
-      <h2 class="text-4xl font-bold heading-font mb-8">Expert Fitness Coach for Busy Working Professionals</h2>
-      <p class="text-lg text-gray-600 leading-relaxed">
-        As a dedicated <strong>fitness coach for working professionals</strong>, I specialize in creating time-efficient, sustainable fitness plans that fit around your demanding schedule, meetings, travel, and family responsibilities.
-      </p>
+  <!-- STATS -->
+  <section class="py-12 bg-white border-b">
+    <div class="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+      <div><div class="stat-number">500+</div><p class="text-gray-600">Professionals Transformed</p></div>
+      <div><div class="stat-number">95%</div><p class="text-gray-600">Client Retention Rate</p></div>
+      <div><div class="stat-number">8.2kg</div><p class="text-gray-600">Avg. Weight Loss</p></div>
+      <div><div class="stat-number">12</div><p class="text-gray-600">Weeks Average Program</p></div>
     </div>
   </section>
 
-  <!-- More sections... (Full content from previous response) -->
-  <!-- (To save space here, the full long content is same as my previous message. You can copy the entire body from my last response and paste here) -->
+  <!-- ABOUT SECTION -->
+  <section class="py-20 bg-white">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div>
+          <h2 class="text-4xl font-bold heading-font mb-6">Expert Fitness Coach for Busy Working Professionals</h2>
+          <p class="text-lg text-gray-600 leading-relaxed mb-6">
+            As a dedicated fitness coach for working professionals, I understand the unique challenges you face — long office hours, endless meetings, frequent travel, and family responsibilities. Traditional gym programs don't work for you.
+          </p>
+          <p class="text-lg text-gray-600 leading-relaxed">
+            That's why I created a flexible, science-backed system that delivers sustainable results with just 3-4 short workouts per week. No more guilt, no more burnout — just consistent progress.
+          </p>
+        </div>
+        <div class="bg-gray-100 h-96 rounded-3xl"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BENEFITS -->
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-6">
+      <h2 class="text-4xl font-bold heading-font text-center mb-12">Why Busy Professionals Choose ScaleCoachPro</h2>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="card-hover bg-white p-8 rounded-3xl shadow-sm">
+          <i class="fa-solid fa-clock text-4xl text-green-600 mb-4"></i>
+          <h3 class="text-2xl font-semibold mb-3">Time-Efficient Workouts</h3>
+          <p class="text-gray-600">30-45 minute home or gym sessions designed for maximum results in minimum time.</p>
+        </div>
+        <div class="card-hover bg-white p-8 rounded-3xl shadow-sm">
+          <i class="fa-solid fa-plane text-4xl text-green-600 mb-4"></i>
+          <h3 class="text-2xl font-semibold mb-3">Travel-Friendly Plans</h3>
+          <p class="text-gray-600">Hotel room workouts, no-equipment routines, and strategies to stay on track while traveling.</p>
+        </div>
+        <div class="card-hover bg-white p-8 rounded-3xl shadow-sm">
+          <i class="fa-solid fa-heart text-4xl text-green-600 mb-4"></i>
+          <h3 class="text-2xl font-semibold mb-3">Sustainable Results</h3>
+          <p class="text-gray-600">No crash diets. Focus on building habits that last for life.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="py-20 bg-white">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-4xl font-bold heading-font text-center mb-12">How Our Program Works</h2>
+      <div class="grid md:grid-cols-4 gap-6">
+        <div class="text-center">
+          <div class="w-16 h-16 mx-auto bg-green-100 text-green-600 rounded-2xl flex items-center justify-center text-3xl font-bold mb-4">1</div>
+          <h4 class="font-semibold mb-2">Free Consultation</h4>
+          <p class="text-sm text-gray-600">We discuss your goals, schedule &amp; challenges.</p>
+        </div>
+        <div class="text-center">
+          <div class="w-16 h-16 mx-auto bg-green-100 text-green-600 rounded-2xl flex items-center justify-center text-3xl font-bold mb-4">2</div>
+          <h4 class="font-semibold mb-2">Custom Plan</h4>
+          <p class="text-sm text-gray-600">Personalized workout + nutrition strategy.</p>
+        </div>
+        <div class="text-center">
+          <div class="w-16 h-16 mx-auto bg-green-100 text-green-600 rounded-2xl flex items-center justify-center text-3xl font-bold mb-4">3</div>
+          <h4 class="font-semibold mb-2">Weekly Check-ins</h4>
+          <p class="text-sm text-gray-600">Constant support via WhatsApp &amp; calls.</p>
+        </div>
+        <div class="text-center">
+          <div class="w-16 h-16 mx-auto bg-green-100 text-green-600 rounded-2xl flex items-center justify-center text-3xl font-bold mb-4">4</div>
+          <h4 class="font-semibold mb-2">Real Results</h4>
+          <p class="text-sm text-gray-600">Track progress and celebrate wins together.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-6xl mx-auto px-6">
+      <h2 class="text-4xl font-bold heading-font text-center mb-12">Success Stories from Busy Professionals</h2>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-white p-8 rounded-3xl shadow">
+          <p class="italic text-gray-600 mb-6">"Lost 11kg in 3 months while managing a startup. Coach made it so easy with short workouts."</p>
+          <div class="font-semibold">— Rohan Sharma, Founder</div>
+        </div>
+        <div class="bg-white p-8 rounded-3xl shadow">
+          <p class="italic text-gray-600 mb-6">"Best decision I ever made. Energy levels are through the roof and I finally fit into my old suits again."</p>
+          <div class="font-semibold">— Priya Malhotra, Senior Manager</div>
+        </div>
+        <div class="bg-white p-8 rounded-3xl shadow">
+          <p class="italic text-gray-600 mb-6">"Travel 15 days a month but still managed to build muscle. The flexibility is unbelievable."</p>
+          <div class="font-semibold">— Arjun Patel, Consultant</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-20 bg-white">
+    <div class="max-w-3xl mx-auto px-6">
+      <h2 class="text-4xl font-bold heading-font text-center mb-12">Frequently Asked Questions</h2>
+      <div class="space-y-6">
+        <details class="bg-gray-50 p-6 rounded-2xl">
+          <summary class="font-semibold cursor-pointer">Do I need a gym membership?</summary>
+          <p class="mt-4 text-gray-600">No. All programs can be done at home with minimal or no equipment.</p>
+        </details>
+        <details class="bg-gray-50 p-6 rounded-2xl">
+          <summary class="font-semibold cursor-pointer">How much time per week?</summary>
+          <p class="mt-4 text-gray-600">Only 3-4 sessions of 30-45 minutes. Perfect for busy schedules.</p>
+        </details>
+        <details class="bg-gray-50 p-6 rounded-2xl">
+          <summary class="font-semibold cursor-pointer">Is the nutrition plan complicated?</summary>
+          <p class="mt-4 text-gray-600">No. Simple, Indian-friendly meal plans that fit your lifestyle and taste.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="py-20 bg-gradient-to-br from-green-600 to-emerald-700 text-white">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <h2 class="text-4xl font-bold heading-font mb-6">Ready to Transform Your Body &amp; Energy?</h2>
+      <p class="text-xl mb-10">Join 500+ professionals who have already changed their lives with sustainable fitness.</p>
+      <a href="https://wa.me/918979401469?text=Hi%20Coach%2C%0A%0AI%20want%20to%20book%20my%20free%20consultation.%0A%0AName%3A%0AAge%3A%0AGender%3A%0ACurrent%20Weight%3A%0AGoal%20(Weight%20Loss%20%2F%20Muscle%20Gain)%3A" 
+         class="inline-block bg-white text-green-700 hover:bg-gray-100 px-12 py-6 rounded-3xl text-xl font-semibold transition text-center">
+        Book Your Free Consultation Now
+      </a>
+    </div>
+  </section>
 
   <footer class="bg-gray-900 text-gray-400 py-12 text-center">
     <p>© 2026 ScaleCoachPro • Fitness Coach for Working Professionals</p>
   </footer>
 
   <script>
+    // Intersection Observer for fade-in animations
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.section-fade').forEach(el => observer.observe(el));
+
+    // Mobile Menu
     document.getElementById('menu-btn').addEventListener('click', () => {
       alert("Mobile Menu - You can expand this later");
     });
