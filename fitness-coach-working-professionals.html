@@ -10,14 +10,14 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap');
-   
+  
     body { font-family: 'Inter', sans-serif; }
     .heading-font { font-family: 'Playfair Display', sans-serif; }
-   
+  
     .hero-bg {
       background: linear-gradient(135deg, #0f172a 0%, #1e2937 100%);
     }
-   
+  
     .card-hover {
       transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     }
@@ -25,7 +25,7 @@
       transform: translateY(-12px);
       box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
     }
-   
+  
     .nav-link {
       position: relative;
     }
@@ -64,10 +64,10 @@
         <img src="https://scalecoachpro.netlify.app/busyfitt.jpeg" alt="ScaleCoachPro Logo" class="h-11 w-auto">
         <span class="text-2xl font-bold tracking-tight heading-font text-gray-900">ScaleCoachPro</span>
       </div>
-     
+    
       <div class="hidden md:flex items-center gap-8 text-sm font-medium">
         <a href="index.html" class="nav-link hover:text-green-600 transition">Home</a>
-       
+      
         <div class="relative group">
           <a href="#" class="nav-link hover:text-green-600 transition flex items-center gap-1">
             Services
@@ -79,12 +79,12 @@
             <a href="#" class="block px-6 py-3 hover:bg-gray-50 text-gray-700">Corporate Wellness Coaching</a>
           </div>
         </div>
-       
+      
         <a href="#" class="nav-link hover:text-green-600 transition">Blog</a>
         <a href="#" class="nav-link hover:text-green-600 transition">About Us</a>
         <a href="#" class="nav-link hover:text-green-600 transition">Contact Us</a>
       </div>
-     
+    
       <div class="flex items-center gap-4">
         <a href="https://wa.me/918979401469?text=Hi%20Coach%2C%0A%0AI%20want%20to%20book%20my%20free%20consultation.%0A%0AName%3A%0AAge%3A%0AGender%3A%0ACurrent%20Weight%3A%0AGoal%20(Weight%20Loss%20%2F%20Muscle%20Gain)%3A"
            class="hidden sm:block bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-2xl font-semibold text-sm transition shadow-lg">
@@ -101,7 +101,7 @@
   <section class="hero-bg text-white py-28 relative overflow-hidden">
     <div class="absolute inset-0 bg-[radial-gradient(at_top_right,#22c55e20_0%,transparent_60%)]"></div>
     <div class="absolute inset-0 bg-[radial-gradient(at_bottom_left,#86efac15_0%,transparent_70%)]"></div>
-    
+   
     <div class="max-w-7xl mx-auto px-6 text-center relative z-10">
       <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold heading-font leading-tight mb-6">
         Fitness Coach for<br>Working Professionals
@@ -127,7 +127,7 @@
     </div>
   </section>
 
-  <!-- ABOUT SECTION -->
+  <!-- ABOUT SECTION (Image added on right side) -->
   <section class="py-20 bg-white">
     <div class="max-w-5xl mx-auto px-6">
       <div class="grid md:grid-cols-2 gap-12 items-center">
@@ -140,7 +140,11 @@
             That's why I created a flexible, science-backed system that delivers sustainable results with just 3-4 short workouts per week. No more guilt, no more burnout — just consistent progress.
           </p>
         </div>
-        <div class="bg-gray-100 h-96 rounded-3xl"></div>
+        <div>
+          <img src="https://scalecoachpro.netlify.app/busyfitt.jpeg" 
+               alt="Fitness Coach for Working Professionals" 
+               class="w-full h-96 object-cover rounded-3xl shadow-lg">
+        </div>
       </div>
     </div>
   </section>
@@ -265,7 +269,6 @@
             Expert online fitness coaching for busy professionals. Sustainable results without sacrificing your career or lifestyle.
           </p>
         </div>
-
         <div>
           <h3 class="text-white font-semibold mb-6">Quick Links</h3>
           <div class="flex flex-col gap-3">
@@ -276,7 +279,6 @@
             <a href="#" class="hover:text-white transition">Contact Us</a>
           </div>
         </div>
-
         <div>
           <h3 class="text-white font-semibold mb-6">Get In Touch</h3>
           <div class="space-y-4">
@@ -291,7 +293,6 @@
           </div>
         </div>
       </div>
-
       <div class="border-t border-gray-800 mt-12 pt-8 text-center text-sm">
         <p>© 2026 ScaleCoachPro • Fitness Coach for Working Professionals. All Rights Reserved.</p>
       </div>
