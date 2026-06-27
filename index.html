@@ -13,7 +13,7 @@
     
     body { font-family: 'Inter', sans-serif; }
     .heading-font { font-family: 'Playfair Display', sans-serif; }
-  
+ 
     .hero-bg {
       background: linear-gradient(135deg, #0f172a 0%, #1a2537 100%);
     }
@@ -32,7 +32,7 @@
       -webkit-text-fill-color: transparent;
     }
 
-    /* Dropdown Styles - Improved for smooth selection */
+    /* Dropdown Styles */
     .dropdown {
       position: relative;
     }
@@ -81,18 +81,18 @@
   </style>
 </head>
 <body class="bg-gray-50 text-gray-900 overflow-x-hidden">
-  <!-- NAVBAR -->
+  <!-- NAVBAR (unchanged) -->
   <nav class="bg-white border-b sticky top-0 z-50 shadow-sm">
     <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
       <div class="flex items-center gap-3">
         <img src="https://scalecoachpro.netlify.app/busyfitt.jpeg" alt="ScaleCoachPro Logo" class="h-11 w-auto">
         <span class="text-2xl font-bold tracking-tight heading-font text-gray-900">ScaleCoachPro</span>
       </div>
-    
+   
       <!-- Desktop Menu -->
       <div class="hidden md:flex items-center gap-8 text-sm font-medium">
         <a href="https://scalecoachpro.netlify.app/" class="nav-link hover:text-green-600 transition">Home</a>
-       
+      
         <!-- Services Dropdown -->
         <div class="dropdown" id="services-dropdown">
           <a href="#" class="nav-link hover:text-green-600 transition flex items-center gap-1 cursor-pointer">
@@ -105,24 +105,23 @@
             <a href="#" class="dropdown-item">Corporate Wellness Coaching</a>
           </div>
         </div>
-
         <a href="#" class="nav-link hover:text-green-600 transition">Blog</a>
         <a href="#" class="nav-link hover:text-green-600 transition">About Us</a>
         <a href="#" class="nav-link hover:text-green-600 transition">Contact Us</a>
       </div>
-    
+   
       <div class="flex items-center gap-4">
         <a href="https://wa.me/918979401469?text=Hi%20Coach%2C%0A%0AI%20want%20to%20book%20my%20free%20consultation.%0A%0AName%3A%0AAge%3A%0AGender%3A%0ACurrent%20Weight%3A%0AGoal%20(Weight%20Loss%20%2F%20Muscle%20Gain)%3A"
            class="hidden sm:block bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-2xl font-semibold text-sm transition shadow-lg shadow-green-500/30">
           Book Free Call
         </a>
-      
+     
         <button id="menu-btn" class="md:hidden text-3xl text-gray-700">
           <i class="fa-solid fa-bars"></i>
         </button>
       </div>
     </div>
-  
+ 
     <!-- Mobile Menu -->
     <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
       <div class="px-6 py-8 flex flex-col gap-6 text-lg font-medium">
@@ -141,11 +140,11 @@
     </div>
   </nav>
 
+  <!-- HERO + All other sections unchanged -->
   <!-- HERO SECTION -->
   <section class="hero-bg text-white py-24 md:py-32 relative overflow-hidden min-h-screen flex items-center">
     <div class="max-w-7xl mx-auto px-6 relative">
       <div class="grid md:grid-cols-2 gap-12 items-center">
-        <!-- Left Content -->
         <div class="space-y-8">
           <div class="inline-flex items-center gap-3 bg-white/10 backdrop-blur-xl border border-white/30 px-6 py-3 rounded-3xl text-sm font-semibold tracking-wide">
             <span class="relative flex h-3 w-3">
@@ -154,29 +153,28 @@
             </span>
             BUSY PROFESSIONALS FITNESS COACH
           </div>
-       
+      
           <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.1] heading-font">
             Fitness That Fits<br>Your <span class="text-green-400">Busy Life</span>
           </h1>
-       
+      
           <p class="text-xl md:text-2xl text-gray-200 max-w-lg leading-relaxed">
             Personalized online coaching for busy professionals. <strong>Sustainable fat loss, strength &amp; energy</strong> — without long gym hours or strict diets.
           </p>
-       
+      
           <a href="https://wa.me/918979401469?text=Hi%20Coach%2C%0A%0AI%20want%20to%20book%20my%20free%20consultation.%0A%0AName%3A%0AAge%3A%0AGender%3A%0ACurrent%20Weight%3A%0AGoal%20(Weight%20Loss%20%2F%20Muscle%20Gain)%3A"
              class="inline-block bg-green-500 hover:bg-green-600 text-white px-10 py-5 rounded-3xl font-semibold text-lg transition-all">
             Book Free Consultation
           </a>
         </div>
-      
-        <!-- Right Side Image -->
+     
         <div class="relative hidden md:flex justify-center">
           <div class="relative">
             <img src="https://scalecoachpro.netlify.app/idd.jpg"
                  alt="Busy Professionals Fitness Coach"
                  class="rounded-3xl shadow-2xl w-full max-w-lg"
                  onerror="this.src='https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800'">
-           
+          
             <div class="absolute -top-4 -right-4 bg-white text-gray-900 px-5 py-3 rounded-2xl shadow-xl flex items-center gap-3 text-sm font-semibold">
               <div class="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
               Next slot in 3 days
@@ -187,7 +185,7 @@
     </div>
   </section>
 
-  <!-- Remaining sections unchanged -->
+  <!-- Other sections (unchanged) -->
   <section class="py-20 bg-white">
     <div class="max-w-7xl mx-auto px-6">
       <div class="max-w-3xl mx-auto text-center fade-in">
@@ -268,21 +266,63 @@
     </div>
   </section>
 
-  <footer class="bg-gray-900 text-gray-400 py-16">
-    <div class="max-w-7xl mx-auto px-6">
-      <div class="flex flex-col md:flex-row justify-between items-center gap-8">
-        <div class="flex items-center gap-3 text-white">
-          <img src="https://scalecoachpro.netlify.app/busyfitt.jpeg" alt="ScaleCoachPro" class="h-10 w-auto">
-          <span class="text-3xl font-bold heading-font">ScaleCoachPro</span>
+  <!-- PROFESSIONAL FOOTER -->
+  <footer class="bg-gray-900 text-gray-400">
+    <div class="max-w-7xl mx-auto px-6 pt-16 pb-8">
+      <div class="grid md:grid-cols-3 gap-10">
+        <!-- Logo & About -->
+        <div>
+          <div class="flex items-center gap-3 text-white mb-6">
+            <img src="https://scalecoachpro.netlify.app/busyfitt.jpeg" alt="ScaleCoachPro" class="h-10 w-auto">
+            <span class="text-3xl font-bold heading-font">ScaleCoachPro</span>
+          </div>
+          <p class="text-gray-400 leading-relaxed">
+            Expert online fitness coaching for busy professionals. Sustainable results without sacrificing your career or lifestyle.
+          </p>
         </div>
-        <p class="text-center md:text-right">© 2026 ScaleCoachPro • Busy Professionals Fitness Coach. All Rights Reserved.</p>
+
+        <!-- Quick Links -->
+        <div>
+          <h3 class="text-white font-semibold mb-6">Quick Links</h3>
+          <div class="flex flex-col gap-3">
+            <a href="https://scalecoachpro.netlify.app/" class="hover:text-white transition">Home</a>
+            <a href="https://scalecoachspros.netlify.app/fitness-coach-working-professionals.html" class="hover:text-white transition">Services</a>
+            <a href="#" class="hover:text-white transition">Blog</a>
+            <a href="#" class="hover:text-white transition">About Us</a>
+            <a href="#" class="hover:text-white transition">Contact Us</a>
+          </div>
+        </div>
+
+        <!-- Contact -->
+        <div>
+          <h3 class="text-white font-semibold mb-6">Get In Touch</h3>
+          <div class="space-y-4">
+            <a href="https://wa.me/918979401469" class="flex items-center gap-3 hover:text-white transition">
+              <i class="fa-solid fa-whatsapp text-green-500 text-xl"></i>
+              <span>WhatsApp: +91 89794 01469</span>
+            </a>
+            <div class="flex items-center gap-3">
+              <i class="fa-solid fa-envelope"></i>
+              <span>coach@scalecoachpro.com</span>
+            </div>
+          </div>
+          
+          <div class="mt-8">
+            <p class="text-sm text-gray-500">Limited slots available.<br>Book your free consultation today.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="border-t border-gray-800 mt-12 pt-8 text-center text-sm">
+        <p>© 2026 ScaleCoachPro • Busy Professionals Fitness Coach. All Rights Reserved.</p>
+        <p class="mt-2 text-xs text-gray-500">Privacy Policy | Terms of Service</p>
       </div>
     </div>
   </footer>
 
   <script>
     function init() {
-      // Mobile menu
       const menuBtn = document.getElementById('menu-btn');
       const mobileMenu = document.getElementById('mobile-menu');
      
@@ -296,16 +336,14 @@
         }
       });
 
-      // Smooth Services Dropdown (Click + Hover)
+      // Services Dropdown
       const dropdown = document.getElementById('services-dropdown');
       const dropdownLink = dropdown.querySelector('a');
-
       dropdownLink.addEventListener('click', function(e) {
         e.preventDefault();
         dropdown.classList.toggle('active');
       });
 
-      // Close dropdown when clicking outside
       document.addEventListener('click', function(e) {
         if (!dropdown.contains(e.target)) {
           dropdown.classList.remove('active');
