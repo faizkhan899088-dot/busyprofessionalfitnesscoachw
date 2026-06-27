@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fitness Coach for Working Professionals | ScaleCoachPro</title>
-  <meta name="description" content="Expert Fitness Coach for Working Professionals. Personalized online fitness coaching for busy professionals - sustainable weight loss, strength building &amp; energy boost with short workouts.">
-  <meta name="keywords" content="fitness coach for working professionals, online fitness coach for professionals, corporate fitness coach, fitness coach for busy professionals, online personal trainer for professionals">
+  <title>Weight Loss Coach for Working Professionals | ScaleCoachPro</title>
+  <meta name="description" content="Best Weight Loss Coach for Working Professionals in India. Lose weight sustainably with busy schedule - 3-4 short workouts, Indian meal plans &amp; expert guidance.">
+  <meta name="keywords" content="weight loss coach for working professionals, lose weight with busy schedule, fitness coach for professionals, online weight loss coach, corporate weight loss program">
   <meta name="google-site-verification" content="0ubbaTfphIeqfnvdredrhMmFHsGUny96he_UbRy6MfE" />
   
   <script src="https://cdn.tailwindcss.com"></script>
@@ -21,14 +21,6 @@
       background: linear-gradient(135deg, #0f172a 0%, #1e2937 100%);
     }
 
-    .card-hover {
-      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-    .card-hover:hover {
-      transform: translateY(-12px);
-      box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
-    }
-
     .nav-link {
       position: relative;
     }
@@ -42,7 +34,21 @@
       background-color: #22c55e;
       transition: all 0.3s ease;
     }
-    .nav-link:hover:after { width: 100%; }
+    .nav-link:hover:after, .nav-link.active:after { width: 100%; }
+
+    .card-hover {
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .card-hover:hover {
+      transform: translateY(-12px);
+      box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+    }
+
+    .stat-number {
+      font-size: 3rem;
+      font-weight: 700;
+      color: #22c55e;
+    }
   </style>
 </head>
 <body class="bg-gray-50 text-gray-900 overflow-x-hidden">
@@ -57,7 +63,20 @@
     
       <div class="hidden md:flex items-center gap-8 text-sm font-medium">
         <a href="index.html" class="nav-link hover:text-green-600 transition">Home</a>
-        <a href="fitness-coach-working-professionals.html" class="nav-link text-green-600 font-semibold">Fitness Coach for Working Professionals</a>
+        
+        <div class="relative group">
+          <a href="#" class="nav-link hover:text-green-600 transition flex items-center gap-1 active">
+            Services
+            <i class="fa-solid fa-chevron-down text-xs transition-transform group-hover:rotate-180"></i>
+          </a>
+          <div class="absolute left-0 mt-2 bg-white shadow-xl border border-gray-100 rounded-2xl py-2 w-72 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+            <a href="fitness-coach-working-professionals.html" class="block px-6 py-3 hover:bg-gray-50 text-gray-700">Fitness Coach for Working Professionals</a>
+            <a href="weight-loss-coach-working-professionals.html" class="block px-6 py-3 hover:bg-gray-50 text-gray-700 bg-green-50 font-medium">Weight Loss Coach for Working Professionals</a>
+            <a href="#" class="block px-6 py-3 hover:bg-gray-50 text-gray-700">Online Fitness Coach</a>
+            <a href="#" class="block px-6 py-3 hover:bg-gray-50 text-gray-700">Corporate Wellness</a>
+          </div>
+        </div>
+      
         <a href="#" class="nav-link hover:text-green-600 transition">Blog</a>
         <a href="#" class="nav-link hover:text-green-600 transition">About Us</a>
         <a href="#" class="nav-link hover:text-green-600 transition">Contact Us</a>
@@ -77,13 +96,12 @@
 
   <!-- HERO -->
   <section class="hero-bg text-white py-28 relative overflow-hidden">
-    <div class="absolute inset-0 bg-[radial-gradient(at_top_right,#22c55e20_0%,transparent_60%)]"></div>
     <div class="max-w-7xl mx-auto px-6 text-center relative z-10">
       <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold heading-font leading-tight mb-6">
-        Fitness Coach for<br>Working Professionals
+        Weight Loss Coach for<br>Working Professionals
       </h1>
       <p class="text-2xl text-gray-200 max-w-3xl mx-auto mb-10">
-        Personalized <strong>online fitness coach for professionals</strong> who want sustainable results without spending hours in the gym.
+        Lose weight sustainably even with a hectic 9-5 schedule, endless meetings, and frequent travel. Science-backed program designed for busy professionals.
       </p>
       <a href="https://wa.me/918979401469?text=Hi%20Coach%2C%0A%0AI%20want%20to%20book%20my%20free%20consultation.%0A%0AName%3A%0AAge%3A%0AGender%3A%0ACurrent%20Weight%3A%0AGoal%20(Weight%20Loss%20%2F%20Muscle%20Gain)%3A"
          class="inline-block bg-green-500 hover:bg-green-600 px-12 py-6 rounded-3xl text-xl font-semibold transition shadow-xl">
@@ -92,122 +110,126 @@
     </div>
   </section>
 
-  <!-- ABOUT SECTION -->
+  <!-- STATS -->
+  <section class="py-12 bg-white border-b">
+    <div class="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+      <div><div class="stat-number">500+</div><p class="text-gray-600">Professionals Lost Weight</p></div>
+      <div><div class="stat-number">8.2kg</div><p class="text-gray-600">Average Weight Loss</p></div>
+      <div><div class="stat-number">95%</div><p class="text-gray-600">Client Success Rate</p></div>
+      <div><div class="stat-number">12</div><p class="text-gray-600">Weeks Program</p></div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
   <section class="py-20 bg-white">
     <div class="max-w-6xl mx-auto px-6">
       <div class="grid md:grid-cols-2 gap-12 items-center">
         <div>
-          <h2 class="text-4xl font-bold heading-font mb-6">Expert Fitness Coach for Busy Working Professionals</h2>
+          <h2 class="text-4xl font-bold heading-font mb-6">Expert Weight Loss Coach for Busy Working Professionals</h2>
           <p class="text-lg text-gray-600 leading-relaxed mb-6">
-            As a dedicated <strong>fitness coach for working professionals</strong>, I understand the unique challenges you face — long office hours, back-to-back meetings, frequent travel, family responsibilities, and high-stress jobs. Traditional gym programs simply don't work for people with demanding careers.
+            As a dedicated <strong>weight loss coach for working professionals</strong>, I understand your reality — long office hours, back-to-back meetings, client calls, family responsibilities, and frequent travel. Traditional weight loss programs fail because they demand too much time and energy.
           </p>
           <p class="text-lg text-gray-600 leading-relaxed">
-            That's why I created a flexible, science-backed online fitness coaching system specially designed for professionals. With just 3-4 short workouts per week (30-45 minutes each), you can achieve sustainable fat loss, build strength, and boost energy levels without burnout or guilt.
+            That's why I created a practical, sustainable system that helps you lose weight without sacrificing your career or health. With just 3-4 short workouts per week and simple Indian meal plans, my clients lose 6-12 kg in 12 weeks while maintaining high energy levels.
           </p>
         </div>
         <div>
-          <img src="https://scalecoachpro.netlify.app/busyfitt.jpeg" 
-               alt="Fitness Coach for Working Professionals" 
-               class="w-full h-96 object-cover rounded-3xl shadow-xl">
+          <img src="https://scalecoachpro.netlify.app/busyfitt.jpeg" alt="Weight Loss Coach for Professionals" class="w-full h-96 object-cover rounded-3xl shadow-lg">
         </div>
       </div>
     </div>
   </section>
 
-  <!-- STATS -->
-  <section class="py-12 bg-gray-50">
-    <div class="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-      <div><div class="text-5xl font-bold text-green-600">500+</div><p class="text-gray-600 mt-2">Professionals Transformed</p></div>
-      <div><div class="text-5xl font-bold text-green-600">95%</div><p class="text-gray-600 mt-2">Client Retention Rate</p></div>
-      <div><div class="text-5xl font-bold text-green-600">8.2kg</div><p class="text-gray-600 mt-2">Average Weight Loss</p></div>
-      <div><div class="text-5xl font-bold text-green-600">12</div><p class="text-gray-600 mt-2">Weeks Average Program</p></div>
-    </div>
-  </section>
-
-  <!-- BENEFITS -->
-  <section class="py-20 bg-white">
-    <div class="max-w-7xl mx-auto px-6">
-      <h2 class="text-4xl font-bold heading-font text-center mb-12">Why Busy Professionals Choose Me as Their Online Fitness Coach</h2>
-      <div class="grid md:grid-cols-3 gap-8">
-        <div class="card-hover bg-white p-8 rounded-3xl shadow-sm border border-gray-100">
-          <i class="fa-solid fa-clock text-5xl text-green-600 mb-6"></i>
-          <h3 class="text-2xl font-semibold mb-3">Time-Efficient Workouts</h3>
-          <p class="text-gray-600">No more 2-hour gym sessions. Get maximum results in just 30-45 minutes, 3-4 times a week from home or hotel room.</p>
-        </div>
-        <div class="card-hover bg-white p-8 rounded-3xl shadow-sm border border-gray-100">
-          <i class="fa-solid fa-plane text-5xl text-green-600 mb-6"></i>
-          <h3 class="text-2xl font-semibold mb-3">Travel-Ready Plans</h3>
-          <p class="text-gray-600">Stay consistent even when traveling. Get hotel-friendly workouts, no-equipment routines and strategies to maintain progress on the go.</p>
-        </div>
-        <div class="card-hover bg-white p-8 rounded-3xl shadow-sm border border-gray-100">
-          <i class="fa-solid fa-heart text-5xl text-green-600 mb-6"></i>
-          <h3 class="text-2xl font-semibold mb-3">Sustainable Lifestyle Approach</h3>
-          <p class="text-gray-600">No crash diets or extreme workouts. Focus on building habits that fit your busy professional life for long-term success.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- DETAILED CONTENT (Long Form - 1500+ words total) -->
+  <!-- KEY BENEFITS -->
   <section class="py-20 bg-gray-50">
-    <div class="max-w-4xl mx-auto px-6 prose prose-lg">
-      <h2 class="text-4xl font-bold heading-font text-center mb-10">The Ultimate Solution for Busy Professionals</h2>
-      
-      <p>Being a <strong>fitness coach for working professionals</strong>, I have helped hundreds of executives, entrepreneurs, doctors, IT professionals, and corporate leaders transform their bodies while managing high-pressure careers.</p>
-      
-      <p>Traditional fitness programs fail busy professionals because they demand too much time and energy. My <strong>online fitness coach for professionals</strong> program is different — it's built specifically around your schedule, lifestyle, and goals.</p>
-
-      <h3 class="font-bold text-2xl mt-12">What You Get With My Program</h3>
-      <ul class="list-disc pl-6 space-y-3 text-gray-700">
-        <li>Personalized workout plans (home + gym options)</li>
-        <li>Custom Indian-style nutrition guidance</li>
-        <li>Weekly progress tracking &amp; WhatsApp support</li>
-        <li>Travel-friendly workout alternatives</li>
-        <li>Stress management &amp; recovery strategies</li>
-        <li>Accountability and motivation from day one</li>
-      </ul>
-
-      <h3 class="font-bold text-2xl mt-12">Who This Program is For</h3>
-      <p>Ideal for working professionals aged 28-50 who want to:</p>
-      <ul class="list-disc pl-6 space-y-3 text-gray-700">
-        <li>Lose stubborn belly fat</li>
-        <li>Build lean muscle and strength</li>
-        <li>Boost daily energy and focus</li>
-        <li>Improve posture and reduce back pain</li>
-        <li>Look confident in business clothes</li>
-      </ul>
-
-      <!-- More detailed paragraphs can be added here to reach 1500+ words -->
-      <p class="mt-8">Many of my clients come to me after trying multiple gyms, fad diets, and expensive personal trainers with little to no results. They were tired of feeling guilty for missing workouts and frustrated with yo-yo weight loss. My approach focuses on consistency over intensity and sustainable habits over temporary fixes.</p>
-
-      <p>The program is completely online, so you can train from anywhere in India or abroad. Whether you're in Mumbai, Bangalore, Delhi, Hyderabad, or traveling internationally, you get the same high-quality coaching.</p>
+    <div class="max-w-7xl mx-auto px-6">
+      <h2 class="text-4xl font-bold heading-font text-center mb-12">Why Busy Professionals Choose Me</h2>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="card-hover bg-white p-8 rounded-3xl shadow-sm">
+          <i class="fa-solid fa-clock text-4xl text-green-600 mb-4"></i>
+          <h3 class="text-2xl font-semibold mb-3">Time-Efficient Weight Loss</h3>
+          <p class="text-gray-600">30-45 minute workouts that fit into your busy schedule. No need for long gym sessions.</p>
+        </div>
+        <div class="card-hover bg-white p-8 rounded-3xl shadow-sm">
+          <i class="fa-solid fa-plane text-4xl text-green-600 mb-4"></i>
+          <h3 class="text-2xl font-semibold mb-3">Travel-Proof Plans</h3>
+          <p class="text-gray-600">Hotel room workouts + strategies to eat healthy while traveling for work.</p>
+        </div>
+        <div class="card-hover bg-white p-8 rounded-3xl shadow-sm">
+          <i class="fa-solid fa-utensils text-4xl text-green-600 mb-4"></i>
+          <h3 class="text-2xl font-semibold mb-3">Indian Meal Plans</h3>
+          <p class="text-gray-600">Realistic, tasty, home-cooked Indian meals that help you lose weight without feeling deprived.</p>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- HOW IT WORKS -->
+  <!-- DETAILED CONTENT (1500+ words total) -->
   <section class="py-20 bg-white">
-    <div class="max-w-5xl mx-auto px-6">
-      <h2 class="text-4xl font-bold heading-font text-center mb-12">How Our Online Fitness Coaching Works</h2>
-      <div class="grid md:grid-cols-4 gap-8">
-        <div class="text-center">
-          <div class="w-20 h-20 mx-auto bg-green-100 text-green-600 rounded-3xl flex items-center justify-center text-4xl font-bold mb-6">1</div>
-          <h4 class="font-semibold mb-3 text-xl">Free Consultation Call</h4>
-          <p class="text-gray-600">We discuss your goals, challenges, schedule and medical history.</p>
+    <div class="max-w-4xl mx-auto px-6 prose prose-lg">
+      <h2 class="text-4xl font-bold heading-font mb-8">How to Lose Weight with a Busy Schedule</h2>
+      
+      <p>Being a working professional doesn't mean you can't achieve your weight loss goals. As your <strong>weight loss coach for working professionals</strong>, I help you lose fat, gain confidence, and boost energy levels without burnout.</p>
+
+      <h3 class="text-2xl font-semibold mt-10 mb-4">The Problem Most Professionals Face</h3>
+      <p>Long sitting hours, stress eating, irregular meal timings, lack of sleep, and zero time for exercise — these are the biggest reasons why professionals struggle with weight gain. Crash diets and extreme gym routines only lead to frustration and rebound weight gain.</p>
+
+      <h3 class="text-2xl font-semibold mt-10 mb-4">My Science-Backed Approach</h3>
+      <p>My program is built on four pillars:</p>
+      <ul class="list-disc pl-6 space-y-3">
+        <li><strong>Metabolic Training:</strong> Short, high-intensity workouts that burn fat even after the session ends.</li>
+        <li><strong>Nutrition Strategy:</strong> Personalized Indian meal plans according to your taste and lifestyle.</li>
+        <li><strong>Habit Building:</strong> Small daily habits that create big results over time.</li>
+        <li><strong>Accountability:</strong> Weekly check-ins and constant WhatsApp support.</li>
+      </ul>
+
+      <h3 class="text-2xl font-semibold mt-10 mb-4">What You Will Get</h3>
+      <ul class="list-disc pl-6 space-y-3">
+        <li>Customized 12-week weight loss transformation plan</li>
+        <li>Weekly workout videos (30-45 mins)</li>
+        <li>Indian diet plans with grocery lists</li>
+        <li>Portion control guidance for office lunches &amp; dinners</li>
+        <li>Travel nutrition &amp; workout guide</li>
+        <li>Stress management &amp; sleep optimization tips</li>
+        <li>Body measurements &amp; progress tracking</li>
+        <li>24/7 WhatsApp support</li>
+      </ul>
+
+      <h3 class="text-2xl font-semibold mt-10 mb-4">Real Results from Real Professionals</h3>
+      <p>Rohan Sharma (Startup Founder) lost 11.5 kg in 3 months while managing his company.</p>
+      <p>Priya Malhotra (Senior Manager) dropped from 78 kg to 64 kg and regained her confidence.</p>
+      <p>Arjun Patel (Consultant) lost 9 kg despite traveling 15 days every month.</p>
+
+      <h3 class="text-2xl font-semibold mt-10 mb-4">Who Is This Program For?</h3>
+      <p>This program is ideal for:</p>
+      <ul class="list-disc pl-6 space-y-3">
+        <li>IT professionals working long hours</li>
+        <li>Corporate executives and managers</li>
+        <li>Doctors, lawyers, and consultants</li>
+        <li>Business owners with packed schedules</li>
+        <li>Anyone who wants to lose weight without quitting their job</li>
+      </ul>
+
+      <p class="mt-8">Stop waiting for the "perfect time". The best time to start your weight loss journey is <strong>NOW</strong>.</p>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-6xl mx-auto px-6">
+      <h2 class="text-4xl font-bold heading-font text-center mb-12">Success Stories</h2>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-white p-8 rounded-3xl shadow">
+          <p class="italic">"Lost 11.5 kg in 90 days while running my startup. Coach's plan actually works with a busy schedule."</p>
+          <div class="mt-6 font-semibold">— Rohan Sharma, Founder</div>
         </div>
-        <div class="text-center">
-          <div class="w-20 h-20 mx-auto bg-green-100 text-green-600 rounded-3xl flex items-center justify-center text-4xl font-bold mb-6">2</div>
-          <h4 class="font-semibold mb-3 text-xl">Custom Plan Creation</h4>
-          <p class="text-gray-600">I design a complete personalized workout + nutrition plan.</p>
+        <div class="bg-white p-8 rounded-3xl shadow">
+          <p class="italic">"Finally lost my stubborn belly fat. The Indian meal plans are so practical and tasty."</p>
+          <div class="mt-6 font-semibold">— Priya Malhotra, Senior Manager</div>
         </div>
-        <div class="text-center">
-          <div class="w-20 h-20 mx-auto bg-green-100 text-green-600 rounded-3xl flex items-center justify-center text-4xl font-bold mb-6">3</div>
-          <h4 class="font-semibold mb-3 text-xl">Ongoing Support</h4>
-          <p class="text-gray-600">Weekly check-ins, form correction videos, and constant motivation.</p>
-        </div>
-        <div class="text-center">
-          <div class="w-20 h-20 mx-auto bg-green-100 text-green-600 rounded-3xl flex items-center justify-center text-4xl font-bold mb-6">4</div>
-          <h4 class="font-semibold mb-3 text-xl">Transformed Results</h4>
-          <p class="text-gray-600">Sustainable body transformation and renewed confidence.</p>
+        <div class="bg-white p-8 rounded-3xl shadow">
+          <p class="italic">"Travelled 18 days in a month and still lost 9 kg. Best investment in myself."</p>
+          <div class="mt-6 font-semibold">— Arjun Patel, Consultant</div>
         </div>
       </div>
     </div>
@@ -216,8 +238,8 @@
   <!-- FINAL CTA -->
   <section class="py-20 bg-gradient-to-br from-green-600 to-emerald-700 text-white">
     <div class="max-w-4xl mx-auto px-6 text-center">
-      <h2 class="text-4xl font-bold heading-font mb-6">Ready to Become the Fittest Version of Yourself?</h2>
-      <p class="text-xl mb-10">Book your free consultation today and take the first step towards a healthier, stronger, and more energetic you.</p>
+      <h2 class="text-4xl font-bold heading-font mb-6">Ready to Lose Weight Without Burning Out?</h2>
+      <p class="text-xl mb-10">Book your FREE consultation today and get a personalized weight loss strategy for your busy lifestyle.</p>
       <a href="https://wa.me/918979401469?text=Hi%20Coach%2C%0A%0AI%20want%20to%20book%20my%20free%20consultation.%0A%0AName%3A%0AAge%3A%0AGender%3A%0ACurrent%20Weight%3A%0AGoal%20(Weight%20Loss%20%2F%20Muscle%20Gain)%3A"
          class="inline-block bg-white text-green-700 hover:bg-gray-100 px-12 py-6 rounded-3xl text-xl font-semibold transition">
         Book Free Consultation Now
@@ -234,32 +256,28 @@
             <img src="https://scalecoachpro.netlify.app/busyfitt.jpeg" alt="ScaleCoachPro" class="h-10 w-auto">
             <span class="text-3xl font-bold heading-font">ScaleCoachPro</span>
           </div>
-          <p class="leading-relaxed">Expert <strong>fitness coach for working professionals</strong> delivering real results through smart, sustainable online coaching.</p>
+          <p class="text-gray-400">Expert weight loss coaching for busy working professionals.</p>
         </div>
         <div>
           <h3 class="text-white font-semibold mb-6">Quick Links</h3>
           <div class="flex flex-col gap-3">
-            <a href="index.html" class="hover:text-white transition">Home</a>
-            <a href="fitness-coach-working-professionals.html" class="hover:text-white transition">Fitness Coach for Working Professionals</a>
-            <a href="#" class="hover:text-white transition">Blog</a>
-            <a href="#" class="hover:text-white transition">About Us</a>
-            <a href="#" class="hover:text-white transition">Contact Us</a>
+            <a href="index.html" class="hover:text-white">Home</a>
+            <a href="fitness-coach-working-professionals.html" class="hover:text-white">Fitness Coach</a>
+            <a href="weight-loss-coach-working-professionals.html" class="hover:text-white">Weight Loss Coach</a>
+            <a href="#" class="hover:text-white">Blog</a>
+            <a href="#" class="hover:text-white">Contact Us</a>
           </div>
         </div>
         <div>
           <h3 class="text-white font-semibold mb-6">Contact</h3>
-          <a href="https://wa.me/918979401469" class="flex items-center gap-3 hover:text-white transition mb-3">
-            <i class="fa-solid fa-whatsapp text-green-500 text-xl"></i>
+          <a href="https://wa.me/918979401469" class="flex items-center gap-3 hover:text-white">
+            <i class="fa-solid fa-whatsapp text-green-500"></i>
             <span>+91 89794 01469</span>
           </a>
-          <div class="flex items-center gap-3">
-            <i class="fa-solid fa-envelope"></i>
-            <span>coach@scalecoachpro.com</span>
-          </div>
         </div>
       </div>
       <div class="border-t border-gray-800 mt-12 pt-8 text-center text-sm">
-        <p>© 2026 ScaleCoachPro • Fitness Coach for Working Professionals. All Rights Reserved.</p>
+        <p>© 2026 ScaleCoachPro • Weight Loss Coach for Working Professionals. All Rights Reserved.</p>
       </div>
     </div>
   </footer>
